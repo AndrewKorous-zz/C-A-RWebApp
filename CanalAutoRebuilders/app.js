@@ -15,9 +15,26 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-app.use(lessMiddleware('/less', {
-  dest: '/css',
-  pathRoot: path.join(__dirname, 'public')
+
+// app.use(lessMiddleware(__dirname + '/public'));
+// app.use(lessMiddleware('/less', {
+//   dest: '/css',
+//   pathRoot: path.join(__dirname, 'public/stylesheets'),
+//   force: true
+// }));
+
+app.use(lessMiddleware(path.join(__dirname, 'less'), {
+  dest: path.join(__dirname, 'public'),
+  options: {
+    compiler: {
+      compress: true
+    }
+  },
+  preprocess: {
+    path: function(pathname, req) {
+      return pathname.replace('/css/', '/');
+    }
+  },
 }));
 
 // uncomment after placing your favicon in /public

@@ -1,1 +1,1 @@
-body{background-color:maroon;padding:50px;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#00B7FF}p{color:blue}p{background-color:honeydew;color:orange}
+@import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";@import "../../node_modules/bootstrap/dist/css/bootstrap-theme.min.css";body{margin:0;padding:0;background-color:whitesmoke;font:14px "Lucida Grande",Helvetica,Arial,sans-serif}a{color:#653332}.footer{color:lightgrey;height:200px;background-image:url(../images/footer-background.jpg);background-size:cover}p{color:#999;background-color:#333}

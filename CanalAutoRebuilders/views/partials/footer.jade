@@ -1,5 +1,8 @@
-.contianer.footer
-  img(src='#')
-  include nav-bar.jade
-  .copyright
-    | Copyright © 2016 Aakay-Why-e Tech
+.container-fluid.footer
+  .row.footer-elements
+    .col-sm-offset-1.col-sm-1
+      img(src='images/canal-logo.png' class="canal-logo-footer" alt="Canal Logo")
+    .col-sm-9
+      include nav-links.jade
+      .copyright
+        | Copyright © 2016 Aakay-Why-e Tech

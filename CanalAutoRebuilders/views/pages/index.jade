@@ -3,31 +3,21 @@ extends ../partials/layout
 block moreHeader
   link(rel='stylesheet', href='/stylesheets/home.css')
 
-block content
-  #fb-root
-    script.
-      (function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
-      fjs.parentNode.insertBefore(js, fjs);
-      }(document, 'script', 'facebook-jssdk'));
+block content      
   .container
-    .row-fluid
-      .col-sm-12
-        include ../partials/home-header.jade
+  .row-fluid
+    include ../partials/home-header.jade
     .row
-      .col-sm-offset-2.col-sm-8
+      .col-sm-offset-1.col-sm-10
         .row.nav-bar
+          //- include ../partials/nav-bar.jade
         .row
           .col-sm-offset-1.col-sm-10
             //what we do spiel
         .row.main-content
           .col-sm-6
-            .fb-page(data-href='https://www.facebook.com/canalautorebuilders/?hc_location=ufi', data-tabs='timeline', data-width='500', data-height='800',data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true')
-                .fb-xfbml-parse-ignore
-                  blockquote(cite='https://www.facebook.com/canalautorebuilders/?hc_location=ufi')
-                    a(href='https://www.facebook.com/canalautorebuilders/?hc_location=ufi') Canal Auto Rebuilders
-
-  include ../partials/footer.jade
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          .col-sm-6
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  .row-fluid
+    include ../partials/footer.jade

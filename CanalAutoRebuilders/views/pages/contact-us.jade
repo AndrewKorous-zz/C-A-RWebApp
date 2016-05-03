@@ -1,4 +1,60 @@
 extends ../partials/layout
+
+block moreHeader
+  link(rel='stylesheet', href='/stylesheets/home.css')
+  
 block content
-  include ../partials/nav-bar
-  h1 contact
+  include ../partials/nav-links
+  .container
+    .row
+      .col-sm-6
+        script(src='https://maps.googleapis.com/maps/api/js?v=3.exp')
+        div(style='overflow:hidden;height:500px;width:500px;')
+          #gmap_canvas(style='height:500px;width:500px;')
+          div
+            small
+              a(href='http://embedgooglemaps.com') embed google maps							
+          div
+            small
+              a(href='http://www.autohuren.world/locaties/ibiza/') auto huren ibiza
+          style.
+            #gmap_canvas img{max-width:none!important;background:none!important}
+        script(type='text/javascript').
+          function init_map(){
+            var styles = [{"featureType":"landscape","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":-100},{"lightness":51},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":-100},{"lightness":30},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":-100},{"lightness":40},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":-25},{"saturation":-100}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]}]
+            var myOptions = {
+              zoom: 14,
+              center: new google.maps.LatLng(41.59238300000002,-88.0564281),
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+              
+            };
+            map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);
+            map.setOptions({styles: styles});
+            marker = new google.maps.Marker({
+              map: map,
+              position: new google.maps.LatLng(41.59238300000002,-88.0564281)
+            });
+            infowindow = new google.maps.InfoWindow({
+              content:'<strong>Canal Auto Rebuilders</strong><br>601 S. State St. Lockport,IL 60441<br>'
+            });
+            google.maps.event.addListener(marker, 'click', function(){
+              infowindow.open(map, marker);
+            });
+            infowindow.open(map, marker);
+          };
+          google.maps.event.addDomListener(window, 'load', init_map);
+          
+      .col-sm-6
+        form(method='post', action='contact-us/send')
+          h1 Contact us m8
+          .form-group
+            label Name
+            input.form-control(type='text', name='name', placeholder='Enter first and last name')
+          .form-group
+            label Email
+            Input.form-control(type='email', name='email', placeholder='Enter your email')
+          .form-group
+            label Message
+            textarea.from-control(name='message', placeholder='Enter Message...')
+          button.btn.btn-default(type='submit') Submit
+  include ../partials/footer

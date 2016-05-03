@@ -6,18 +6,45 @@ block moreHeader
 block content      
   .container
   .row-fluid
+    .video-container
+      video(autoplay muted loop)
+        source(src="/videos/home-background.mp4" type="video/mp4")
     include ../partials/home-header.jade
-    .row
-      .col-sm-offset-1.col-sm-10
-        .row.nav-bar
+  .row
+    .col-sm-offset-2.col-sm-8
+      .main-content
+        br
+        br
+        br
+        br
+        br
+        .row-fluid.nav-bar
           //- include ../partials/nav-bar.jade
-        .row
+        .row-fluid.about-us-blurb
           .col-sm-offset-1.col-sm-10
             //what we do spiel
-        .row.main-content
-          .col-sm-6
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-          .col-sm-6
-            p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .row-fluid
+          .col-sm-offset-1.col-sm-5.facebook
+            #fb-root
+              script.
+                (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            .fb-page(data-href='https://www.facebook.com/canalautorebuilders/?fref=ts', data-tabs='timeline', data-width='500', data-height='900', data-small-header='false', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true')
+              .fb-xfbml-parse-ignore
+                blockquote(cite='https://www.facebook.com/canalautorebuilders/?fref=ts')
+                  a(href='https://www.facebook.com/canalautorebuilders/?fref=ts') Canal Auto Rebuilders
+
+          .col-sm-offset-1.col-sm-4
+            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam erat lectus, facilisis ac dui quis, maximus pulvinar nisl. Nunc dictum lectus mauris, a efficitur dolor malesuada id. Pellentesque congue tortor sit amet facilisis ornare. Vivamus vestibulum vitae elit et finibus. Donec lobortis risus lectus, non molestie sem porttitor quis. Nulla ullamcorper augue eu lacus interdum auctor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam quis commodo dolor. Etiam malesuada tristique nisi, congue imperdiet massa ultricies nec. Morbi id consequat lorem. Sed sodales mauris tincidunt, egestas lectus ac, congue ex.
+            p Aliquam dapibus vitae libero quis vestibulum. Ut odio lectus, volutpat in vehicula posuere, porttitor in lectus. Suspendisse in neque id tellus viverra vestibulum. Cras rhoncus nec lectus id gravida. Sed libero lorem, ornare quis nibh in, molestie mattis lacus. Cras in erat volutpat, tincidunt lacus vel, ultrices metus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+            p Proin ut varius ante. Sed eu lobortis leo. Mauris blandit aliquam sagittis. Mauris et aliquet massa, vel commodo purus. Aenean nec ultricies mauris. Duis ut ex elit. Nam aliquam diam eu faucibus laoreet. Vivamus id tempor odio. Duis lacinia massa ligula, eu interdum odio suscipit elementum. Sed non cursus orci. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sed cursus ante. In tincidunt, quam sit amet viverra lacinia, nisi augue scelerisque elit, vel imperdiet libero urna id erat.
+            p Duis non odio quis lectus sodales porta. Aliquam ac consectetur eros. Mauris eget tortor id lectus ultricies finibus. Fusce bibendum et ex id scelerisque. Ut sit amet ex augue. Nunc congue posuere turpis vel suscipit. Donec accumsan neque ut elit semper rhoncus. Aliquam erat volutpat. Donec laoreet semper ornare. Donec suscipit congue lorem, eu aliquam tellus condimentum a. Integer eu neque volutpat, dictum libero id, vestibulum tortor. Suspendisse faucibus ultricies odio et efficitur. Pellentesque dolor tortor, tempor sit amet mauris lobortis, tincidunt malesuada ex. Proin est nibh, ultricies vel libero ac, scelerisque ornare felis.
+            p pharetra suscipit orci, vel luctus metus aliquet suscipit. Vestibulum eu fermentum neque. Curabitur id est condimentum nisi ornare vulputate eget tincidunt nisl. Curabitur et maximus enim, eget condimentum sapien. Donec aliquet augue mi. Sed laoreet nibh a nisl tempus lacinia. Phasellus facilisis cursus ultricies. Etiam metus ligula, fermentum at commodo eget, commodo ullamcorper nibh. Quisque semper pretium erat, in interdum mi efficitur non. Proin purus magna, scelerisque sed justo eu, semper fringilla erat. Cras blandit a dui et semper. Aliquam sagittis sem ut ullamcorper aliquet. Nullam commodo in purus sit amet fringilla. Aenean iaculis eleifend diam, at congue diam tempor vitae. Praesent mi leo, posuere nec felis in, viverra tempus magna.
+        .row
   .row-fluid
     include ../partials/footer.jade

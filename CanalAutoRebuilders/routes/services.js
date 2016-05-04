@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('pages/services', { title: 'Express' });
+  res.render('pages/services', { title: 'Canal Auto Rebuilders' });
 });
 
 module.exports = router;

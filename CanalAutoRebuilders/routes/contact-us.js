@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('pages/contact-us', { title: 'Express' });
+  res.render('pages/contact-us', { title: 'Canal Auto Rebuilders' });
 });
 
 router.post('/send', function(req, res, next){

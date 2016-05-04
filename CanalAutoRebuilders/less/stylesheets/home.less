@@ -1,11 +1,6 @@
 @import 'layout';
 @import 'footer';
 
-p {
-  color: #999;
-  background-color: @gray-background;
-}
-
 .home-header {
   height: 450px;
   background-color: @canal-maroon;
@@ -50,14 +45,22 @@ p {
     color: rgba(250,250,250, 1);
   }
 }
-
-.our-pitch {
+.about-us-blurb {
+  background-color: @canal-maroon;
   height: 300px;
-  padding:30px;
-  p {
-    font-size: 20px;
+  margin-bottom: 50px;
+  .our-pitch {
+    height: 300px;
+    padding:30px;
+    p {
+      font-size: 20px;
+    }
+    p > span {
+      font-size: 25px;
+    }
   }
-  p > span {
-    font-size: 25px;
-  }
+}
+
+.break-at-bottom{
+  height: 1150px;
 }

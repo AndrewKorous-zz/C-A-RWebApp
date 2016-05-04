@@ -1,0 +1,15 @@
+nav.navbar.navbar-inverse
+  .container-fluid
+    .navbar-header
+      a.navbar-brand(href='/')
+        img(alt='Brand', src='/images/canal-logo.png', height=25)
+      ul.nav.navbar-nav.nav-bar-left
+        - var links = {}
+        include nav-list
+        each v, k in links
+          if selected == k
+            li.active
+              a(href=v)= k
+          else 
+            li
+              a(href=v)= k

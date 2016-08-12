@@ -1,6 +1,7 @@
 extends ../partials/layout
 block moreHeader
   link(rel='stylesheet', href='/stylesheets/services.css')
+  script(src='libs/bootstrap/js/carousel.js')
 block content
   include ../partials/nav-bar.jade
   .row
@@ -20,7 +21,11 @@ block content
                   .carousel-caption
                     |...
                 .item
-                  img(src='...', alt='...')
+                  img(src='images/Services/Restoration/restoration-2.jpg', alt='...')
+                  .carousel-caption
+                    |...
+                .item
+                  img(src='images/Services/Restoration/restoration-3.jpg', alt='...')
                   .carousel-caption
                     |...
                 |...

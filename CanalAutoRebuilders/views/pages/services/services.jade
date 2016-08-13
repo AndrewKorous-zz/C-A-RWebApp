@@ -1,0 +1,41 @@
+extends ../../partials/layout
+block moreHeader
+  link(rel='stylesheet', href='/stylesheets/services.css')
+  script(src='libs/bootstrap/js/carousel.js')
+block content
+  include ../../partials/nav-bar.jade
+  .row
+    .col-sm-offset-2.col-sm-8.main-content
+      .row
+        .col-sm-6
+          //restoration
+          .redbox 
+            include carouselPartials/restoration.jade
+        .col-sm-6
+          .row
+            .col-sm-6
+              //suspension and brakes
+              .redbox
+                include carouselPartials/suspensionAndBrakes.jade
+              //transmission
+            .col-sm-6
+              .redbox
+                include carouselPartials/transmission.jade
+            //electrical
+          .row
+            .redbox
+              include carouselPartials/electrical.jade
+      .row
+        .col-sm-4
+          //engine detail
+          .redbox
+            include carouselPartials/engineDetail.jade
+        .col-sm-4
+          //custom paint
+          .redbox
+            include carouselPartials/customPaint.jade
+        .col-sm-4
+          //sheet metal
+          .redbox
+            include carouselPartials/sheetMetal.jade
+  include ../../partials/footer.jade

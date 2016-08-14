@@ -1,7 +1,35 @@
 extends ../partials/layout
+block moreHeader
+  link(rel='stylesheet', href='stylesheets/about.css')
+  
 block content
   include ../partials/nav-bar
   .row
-    .col-sm-offset-2.col-sm-8
-      img(src="/images/about.jpg" width="100%")
+    .col-sm-offset-2.col-sm-8.main-content
+      .jimbo
+        .row
+          .col-sm-8
+            .quote
+              p 
+                span.leftMark "
+                | Aenean et facilisis ipsum, venenatis tincidunt tellus. 
+                | Aliquam sit amet ante libero. Phasellus lectus sapien, 
+                | dictum non tincidunt sit amet, pulvinar vitae nulla. 
+                | Integer luctus nisl nec nulla malesuada dignissim. Proin 
+                | eu ex laoreet, porttitor ante gravida, varius quam. 
+                | Maecenas dictum laoreet sollicitudin.
+                span "
+          .col-sm-4
+            img(src='images/jimbo.png', height= 300)
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      p hehe xd
   include ../partials/footer

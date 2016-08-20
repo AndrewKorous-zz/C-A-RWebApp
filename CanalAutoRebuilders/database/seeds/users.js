@@ -1,25 +1,6 @@
-var mongoose = require('mongoose');
+var User = require('../models/user.js');
 
-var user = mongoose.Schema({
-  firstName: {
-    type: String,
-    match: /[a-zA-Z]*/
-  },
-  lastName: {
-    type: String,
-    match: /[a-zA-Z]*/
-  },
-  email: {
-    type: String,
-    match: /.+@.+\..+/,
-    required: true
-  },
-  password: {
-    type: String
-  }
-});
-
-user.findOne({'email':'ajkorous@gmail.com'}, function(error, user){
+User.findOne({'email':'ajkorous@gmail.com'}, function(error, user){
   if(error) return;
   if(user){
     //already in database

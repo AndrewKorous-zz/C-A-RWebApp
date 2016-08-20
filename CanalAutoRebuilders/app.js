@@ -6,12 +6,25 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware');
 
+var mongo = require('mongodb');
+var mongoose = require('mongoose');
+var configureDatabase = require('./database/configureDatabase.js')
+
 var routes = require('./routes/index');
 var services = require('./routes/services');
 var about = require('./routes/about');
 var contact = require('./routes/contact-us');
 
 var app = express();
+
+//database setup
+mongoose.connect(configureDatabase.url, function(error){
+  if(error){
+    console.log(error);
+  } else{
+    require('./database/seeds/users.js');
+  }
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -23,7 +23,7 @@ db.collection('users').findOne({'email':adminSeed.email}, function(error, user){
         console.log(adminSeed.firstName+' '+adminSeed.lastName+' was inserted into the db');
       }
       db.close();
-    })
+    });
   }
   db.close();
 });

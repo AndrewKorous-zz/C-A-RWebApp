@@ -7,7 +7,7 @@ block content
   .row
     .col-sm-offset-2.com-sm-8
       .row-fluid
-      form(method='post', action='testimonials')
+      form(method='post', action='testimonials/submit')
         h1 Submit your own testimonial!
           .form-group
             label First Name
@@ -16,12 +16,15 @@ block content
             label Last Name
             input.form-control(type='text', name='lastName', placeholder='Last Name')
           .form-group
+            label Email
+            input.form-control(type='email', name='email', placeholder='Your Email')
+          .form-group
             label Your car
             input.form-control(type='text', name='year', placeholder='Year')
             input.form-control(type='text', name='make', placeholder='Make')
             input.form-control(type='text', name='model', placeholder='Model')
           .form-group
             label Testimonial/Review
-            textArea.textArea.form-control(name='testimonial', placeholder='Describe your experience with us...')
+            textArea.textArea.form-control(name='message', placeholder='Describe your experience with us...')
           button.btn.btn-default(type='submit') Submit
   include ../partials/footer

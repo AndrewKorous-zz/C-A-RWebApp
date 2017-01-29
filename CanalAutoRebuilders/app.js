@@ -7,17 +7,17 @@ var bodyParser = require('body-parser');
 var lessMiddleware = require('less-middleware');
 
 var mongoUtil = require('./database/mongoUtil');
-
-var routes = require('./routes/index');
-var services = require('./routes/services');
-var about = require('./routes/about');
-var contact = require('./routes/contact-us');
-var testimonials = require('./routes/testimonials');
-
 var app = express();
 
 //database setup
 mongoUtil.connectToServer(function(error){
+  var routes = require('./routes/index');
+  var services = require('./routes/services');
+  var about = require('./routes/about');
+  var contact = require('./routes/contact-us');
+  var testimonials = require('./routes/testimonials');
+
+
   require('./database/configureDatabase');
   // view engine setup
   app.set('views', path.join(__dirname, 'views'));
